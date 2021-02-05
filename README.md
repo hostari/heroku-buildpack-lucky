@@ -12,20 +12,34 @@ application root directory with the version that should be used (e.g. `0.17.1`).
 
 ## Requirements
 
-The stock generated lucky config will run as expected.
+You will need:
 
-If your application was generated with `lucky` before 2021-Feb, you may need to add a shard target to your shard.yml file:
+- Setup your heroku config:
+
+  - lucky_env variable: `heroku config:set LUCKY_ENV=production`
+  - sendgrid key: `heroku config:set SECRET_KEY_BASE=$(lucky gen.secret_key)`
+  - app domain: `heroku config:set APP_DOMAIN=$(heroku apps:info | grep 'Web URL' | awk '{print $3}')`
+  - sendgrid key: `heroku config:set SEND_GRID_KEY=unused`
+
+- Configure your lucky and node buildpacks:
+
+  - `heroku buildpacks:add heroku/nodejs`
+  - `heroku buildpacks:add lucky-framework/lucky`
+
+- Attach a postgres database service:
+
+  - `heroku addons:create heroku-postgresql:hobby-dev`
+
+- Ensure your crystal version is specified in a `.crystal-version` file
+- If your application was generated with `lucky` before 2021-Feb, you may need to add a shard target to your shard.yml file:
 
 ```diff
 name: project_name
-version: 0.1.0
 
 targets:
 # replace project_name with the name of your project
 +  project_name:
 +    main: src/project_name.cr
-
-crystal: 0.35.1
 ```
 
 ## Testing
