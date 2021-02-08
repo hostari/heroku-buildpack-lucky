@@ -17,7 +17,7 @@ You will need:
 - Setup your heroku config:
 
   - lucky_env variable: `heroku config:set LUCKY_ENV=production`
-  - sendgrid key: `heroku config:set SECRET_KEY_BASE=$(lucky gen.secret_key)`
+  - secret key base: `heroku config:set SECRET_KEY_BASE=$(lucky gen.secret_key)`
   - app domain: `heroku config:set APP_DOMAIN=$(heroku apps:info | grep 'Web URL' | awk '{print $3}')`
   - sendgrid key: `heroku config:set SEND_GRID_KEY=unused`
 
