@@ -47,6 +47,12 @@ targets:
 To test a change to this buildpack, write a unit test in `tests/run` that asserts your change and
 run `make test` to ensure the change works as intended and does not break backwards compatibility.
 
+## Publishing Buildpack
+
+* Log in to Heroku
+* Visit partner dashboard for buildpacks https://addons-next.heroku.com/buildpacks
+* Read more on Publishing buildpacks https://devcenter.heroku.com/articles/buildpack-registry
+
 ## More info
 
 - [Luckyframework.org](https://luckyframework.org) has a guide on [Deploying to Heroku](https://luckyframework.org/guides/deploying/heroku)
