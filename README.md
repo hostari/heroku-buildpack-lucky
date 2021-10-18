@@ -8,7 +8,7 @@ $ heroku create myapp --buildpack lucky-framework/lucky
 
 The default behaviour is to use the [latest crystal release](https://github.com/crystal-lang/crystal/releases/latest).
 If you need to use a specific version create a `.crystal-version` file in your
-application root directory with the version that should be used (e.g. `0.17.1`).
+application root directory with the version that should be used (e.g. `1.2.0`).
 
 ## Requirements
 
@@ -51,3 +51,4 @@ run `make test` to ensure the change works as intended and does not break backwa
 
 - [Luckyframework.org](https://luckyframework.org) has a guide on [Deploying to Heroku](https://luckyframework.org/guides/deploying/heroku)
 - Lucky is written in [crystal](https://crystal-lang.org/)
+- [Official Lucky Buildpack](https://elements.heroku.com/buildpacks/luckyframework/heroku-buildpack-lucky)
