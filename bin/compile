@@ -67,7 +67,7 @@ echo "export PATH=\$HOME/.heroku/crystal/bin:\$PATH" >> "$BUILD_DIR/.profile.d/c
 cd "$BUILD_DIR"
 
 start "Installing shards and compiling project"
-shards build --production --release
+shards build --production --release --ignore-crystal-version
 finished
 
 start "Setting up Lucky tasks"
